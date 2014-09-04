@@ -1,0 +1,69 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+            <!-- center left-->
+          <div class="col-md-8">
+            <hr>
+
+             <div class="panel panel-default">
+                   <div class="panel-heading"><h4> Editar Aula</h4></div>
+                       <form action="/editaraula/" method="post">{% csrf_token %}
+                         <div class="control-group">
+                           <div class="control">
+                            <h4>Tipo</h4>
+                             <select id="select_tipo"name="tipo" class="form-control">
+                              <option>Aula</option>
+                              <option>Taller</option>
+                              <option>Sala de computo</option>
+                              <option>Aula de posgrado</option>
+                             </select>
+                           </div>
+
+                             </br>
+
+                         <div class="controls">
+                              <br/>
+
+                              <button  id="buscar" align="center" type="submit" class="btn btn-primary btn-lg center-block">
+                               Buscar
+                              </button>
+                         </div>
+
+                          <br/>
+
+                     <table class="table table-hover">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Codigo</th>
+                        <th>Capacidad</th>
+                        <th>Opciones</th>
+                    </tr>
+                        {% for element in consulta_aula %}
+                           <tr>
+                            <td>{{element.nombre}}</td>
+                            <td>{{element.codigo}}</td>
+                            <td>{{element.capacidad}}</td>
+                            <td><a href="/edicionaula/{{element.id}}" name="editar" type="button" class="btn btn-info">Editar</a>
+                            <button name="eliminar" type="button" class="btn btn-danger">Eliminar</button></td>
+                           </tr>
+                        {% endfor %}
+
+                            </table>
+                         </div>
+
+
+
+                            <br/>
+                       </form>
+             </div>
+          </div>
+
+    </div>
+
+
+
+                  </div><!--/panel-body-->
+
+{% endblock content %}

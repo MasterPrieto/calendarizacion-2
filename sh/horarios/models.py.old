@@ -1,0 +1,52 @@
+from django.db import models
+
+# Create your models here.
+
+class Imagen(models.Model):
+    nombre  = models.CharField(max_lenght=255)
+    archivo = models.CharField(max_lenght=255)
+    mime    = models.CharField(max_lenght=255)
+    ancho   = models.CharField(max_lenght=255)
+    alto    = models.CharField(max_lenght=255)
+    alt     = models.CharField(max_lenght=255)
+
+class Instituto(models.Model):
+    nombre = models.CharField(max_lenght=255)
+    color  = models.CharField(max_lenght=10)
+
+class Profesor(models.Model):
+    nombre          = models.CharField(max_lenght=50)
+    apellidos       = models.CharField(max_lenght=255)
+    codigo          = models.CharField(max_lenght=20)
+    correo          = models.CharField(max_lenght=255)
+    horaspref       = models.CharField(max_lenght=255)
+    instituto_id    = models.IntegerField()
+    instituto       = models.ForeignKey('Instituto')
+    imagen_id       = models.IntegerField()
+    imagen          = models.ForeignKey('Imagen')
+    horaspref       = models.CharField(max_lenght=255, default="[]")
+
+class Carrera(models.Model):
+    tipo            = models.IntegerField(default=0)
+    nombre          = models.CharField(max_lenght=100)
+    instituto_id    = models.IntegerField()
+    instituto       = models.ForeignKey('Instituto')
+    imagen_id       = models.IntegerField()
+    imagen          = models.ForeignKey('Imagen')
+    color           = models.CharField(max_lenght=10)
+
+class Tipoespacio(models.Model):
+    nombre          = models.CharField(max_lenght=255)
+    imagen_id       = models.IntegerField()
+    imagen          = models.ForeignKey('Imagen')
+    color           = models.CharField(max_lenght=10)
+
+class Espacio(models.Model):
+    nombre          = models.CharField(max_lenght=255)
+    codigo          = models.CharField(max_lenght=10)
+    capacidad       = models.IntegerField(default=0)
+    tipoespacio_id  = models.IntegerField()
+    tipoespacio     = models.ForeignKey('Tipoespacio')
+
+class Recurso(models.Model):
+

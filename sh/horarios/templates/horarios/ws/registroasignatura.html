@@ -1,0 +1,111 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+
+            <!-- center left-->
+
+          <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-12">
+                         <div data-alerts="alerts" data-titles="{&quot;success&quot;: &quot;&lt;em&gt;Registro Agregado!&lt;/em&gt;&quot;}" data-ids="myid" data-fade="10000"> </div>
+                 </div>
+               <hr>
+
+              <div class="panel panel-default">
+
+                    <div class="panel-heading"><h4>Registrar Asignatura</h4></div>
+
+                    <div class="panel-body">
+
+                       <div class="row">
+                            <div class="col-md-10">
+                              <form action="/registroasignatura" method="post">{% csrf_token %}
+                                <div class="control-group">
+                          <h4>Nombre de la asignatura</h4>
+                          <div class="controls">
+                           <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre Completo">
+                          </div>
+                   
+                          <h4>Codigo</h4>
+                          <div class="controls">
+                           <input type="text" name="codigo" class="form-control" placeholder="Ingrese Codigo Correspondiente">
+                          </div>
+                        </div>  
+                       
+                                               
+                        <div class="control-group">                          
+                          <h4>Carrera</h4>
+                          <div class="controls">
+                             <select name="carrera" class="form-control">
+                             <option>Ingenieria en Alimentos</option>
+                              <option>Ingenieria en Computación</option>
+                              <option>Ingenieria en Diseño</option>
+                              <option>Ingenieria en Electrónica</option>
+                             <option>Ingenieria en Mecatrónica</option>
+                             <option>Ingenieria en Industrial</option>
+                             <option>Ingenieria Industrial</option>
+                             <option>Ingenieria en Física Aplicada</option>
+                             <option>Licenciatura en Ciencias Empresariales </option>
+                             <option>Licenciatura en Matemáticas Aplicadas </option>
+                             <option>Licenciatura en Estudios Mexicanos </option>
+                                </select>
+                          </div>
+                           <h4>Semestre</h4>
+                          <div class="controls">
+                             <select name="semestre" class="form-control">
+                            <option>1</option>
+                             <option>2</option>
+                             <option>3</option>
+                             <option>4</option>
+                             <option>5</option>
+                             <option>6</option>
+                             <option>7</option>
+                             <option>8</option>
+                             <option>9</option>
+                             <option>10</option>
+                              </select>
+                          </div>
+                         <h4>Lugar</h4>
+                          <div class="controls">
+                             <select name="lugar" class="form-control">
+                            <option>Aula</option>
+                             <option>Taller</option>
+                             <option>Sala</option>
+        
+                              </select>
+                          </div>
+                          
+                        </div>  
+                        <div class="control-group">
+                                        <h4>Comentarios</h4>
+                                        <div class="controls">
+                                            <textarea name="comentario"class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                <h4>Asignatura Especial</h4>
+                                     <label class="checkbox-inline">
+                                       <input name="deespecialidad" type="checkbox" id="inlineCheckbox1" value="option1"> SI
+                                     </label>
+
+
+                                <div class="controls">
+                                   <br/>
+                                   <button id="warn-me" type="submit" class="btn btn-primary">
+                                      Guardar
+                                   </button>
+                                     <hr>
+                                </div>
+                              </form>
+                            </div>
+
+                       </div>
+                    </div>
+
+              </div>
+          </div>
+
+{% endblock content %}
+
+
+

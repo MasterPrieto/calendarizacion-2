@@ -1,0 +1,66 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+
+            <!-- center left-->
+
+          <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-12">
+                         <div data-alerts="alerts" data-titles="{&quot;success&quot;: &quot;&lt;em&gt;Registro Agregado!&lt;/em&gt;&quot;}" data-ids="myid" data-fade="10000"> </div>
+                 </div>
+               <hr>
+
+              <div class="panel panel-default">
+
+                    <div class="panel-heading"><h4>Registrar Recurso</h4></div>
+
+                    <div class="panel-body">
+
+                       <div class="row">
+                            <div class="col-md-10">
+                              <form action="/registrorecurso" method="post">{% csrf_token %}
+                          <div class="control-group">
+                          <h4>Nombre del Recurso</h4>
+                          <div class="controls">
+                           <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre Completo">
+                          </div>
+                          <div class="control-group">
+                          <h4>Capacidad</h4>
+                          <div class="controls">
+                           <input type="text" name="capacidad" class="form-control" placeholder="Ingrese la Capacidad">
+                          </div>
+                   
+
+                        </div>  
+
+                        <div class="control-group">                          
+                          <h4>Tipo</h4>
+                          <div class="controls">
+                             <select name="tipo" class="form-control">
+                             <option>1</option>
+
+                                </select>
+                          </div>
+
+                          
+                        </div>  
+
+
+                                  <div class="controls">
+                                   <br/>
+                                   <button id="warn-me" type="submit" class="btn btn-primary">
+                                      Guardar
+                                   </button>
+                                     <hr>
+                                </div>
+                              </form>
+                            </div>
+
+                       </div>
+                    </div>
+
+              </div>
+          </div>
+
+{% endblock content %}

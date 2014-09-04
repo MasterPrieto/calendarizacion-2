@@ -1,0 +1,89 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+
+            <!-- center left-->
+
+          <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-12">
+                         <div data-alerts="alerts" data-titles="{&quot;success&quot;: &quot;&lt;em&gt;Registro Agregado!&lt;/em&gt;&quot;}" data-ids="myid" data-fade="10000"> </div>
+                 </div>
+               <hr>
+
+              <div class="panel panel-default">
+
+                    <div class="panel-heading"><h4>Registrar Aula</h4></div>
+
+                    <div class="panel-body">
+
+                       <div class="row">
+                            <div class="col-md-10">
+                              <form action="/registroaula" method="post">{% csrf_token %}
+                                <div class="control-group">
+
+                                     <h4>Nombre</h4>
+                                     <div class="controls">
+                                        <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre Completo">
+                                     </div>
+                   
+                                     <h4>Codigo</h4>
+                                     <div class="controls">
+                                          <input type="text" name="codigo" class="form-control" placeholder="Ingrese el Codigo Correspondiente ">
+                                     </div>
+
+                                     <h4>Capacidad</h4>
+                                     <div class="controls">
+                                         <input type="text" name="capacidad" class="form-control" placeholder="Ingrese la Capacidad Total">
+                                     </div>
+                                </div>
+                       
+                                               
+                                    <div class="control-group">
+                                        <h4>Tipo</h4>
+                                        <div class="controls">
+                                            <select name="tipo" class="form-control">
+                                                <option>Aula</option>
+                                                <option>Taller</option>
+                                                <option>Sala de computo</option>
+                                                <option>Aula de posgrado</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <h4>Comentarios</h4>
+                                        <div class="controls">
+                                            <textarea name="comentario"class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                <h4>Equipo en el Aula</h4>
+                                     <label class="checkbox-inline">
+                                       <input name="proyector" type="checkbox" id="inlineCheckbox1" value="option1"> Proyector
+                                     </label>
+                                     <label class="checkbox-inline">
+                                        <input name="internet" type="checkbox" id="inlineCheckbox2" value="option2"> Internet
+                                     </label>
+
+                                <div class="controls">
+                                   <br/>
+                                   <button id="warn-me" type="submit" class="btn btn-primary">
+                                      Guardar
+                                   </button>
+                                     <hr>
+                                </div>
+                              </form>
+                            </div>
+
+                       </div>
+                    </div>
+
+              </div>
+          </div>
+
+{% endblock content %}
+
+                
+
+

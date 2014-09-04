@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Sistema de calendarizacion.</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/prettify.css" />
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
+  </head>
+
+    <!-- Header -->
+
+ <body>
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Universidad Tecnológica de la Mixteca</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+              <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                <li><a href="#">My Profile</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div><!-- /container -->
+    </div>
+<!-- /Header -->
+
+<!-- Main -->
+ <div class="container">
+      <div class="col-md-3">
+         <!-- Left column -->
+         <a href="#"><strong><i class="glyphicon glyphicon-attach"></i> Menu</strong></a>
+
+           <hr>
+
+           <ul class="list-unstyled">
+             <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+               <h5>Panel de Registro <i class="glyphicon glyphicon-plus"></i></h5></a>
+
+               <ul class="list-unstyled collapse in" id="userMenu">
+                   <li class="active"> <a href="{{ APP_URL }}"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                 <li><a href="{{ APP_URL }}registroprofesor"><i class="glyphicon glyphicon-user"></i> Registrar Profesores </a></li>
+                 <li><a href="{{ APP_URL }}registroasignatura"><i class="glyphicon glyphicon-file"></i> Registrar Asignatura</a></li>
+                 <li><a href="{{ APP_URL }}registroasignacion"><i class="glyphicon glyphicon-file"></i> Registrar Asignacion</a></li>
+                 <li><a href="{{ APP_URL }}registroasignaturarecurso"><i class="glyphicon glyphicon-file"></i> Registrar Asignatura Recurso</a></li>
+                 <li><a href="{{ APP_URL }}registroaula"><i class="glyphicon glyphicon-calendar"></i>Registrar Aula</a></li>
+                 <li><a href="{{ APP_URL }}registrogrupo"><i class="glyphicon glyphicon-map-marker"></i> Registrar Grupo</a></li>
+                 <li><a href="{{ APP_URL }}registrocarrera"><i class="glyphicon glyphicon-file"></i> Registrar Carrera</a></li>
+                 <li><a href="{{ APP_URL }}registrodiscapacidad"><i class="glyphicon glyphicon-user"></i> Registrar Discapacidad</a></li>
+                 <li><a href="{{ APP_URL }}registroprofesordiscapacidad"><i class="glyphicon glyphicon-file"></i> Registrar Discapacidad en Profesor</a></li>
+                 <li><a href="{{ APP_URL }}registroespaciodiscapacidad"><i class="glyphicon glyphicon-file"></i> Registrar Discapacidad en Espacio</a></li>
+                 <li><a href="{{ APP_URL }}registrogrupodiscapacidad"><i class="glyphicon glyphicon-file"></i> Registrar Discapacidad en Grupo</a></li>
+                 <li><a href="{{ APP_URL }}registroespacio"><i class="glyphicon glyphicon-map-marker"></i> Registrar Espacio</a></li>
+                 <li><a href="{{ APP_URL }}registrotipoespacio"><i class="glyphicon glyphicon-map-marker"></i> Registrar Tipo de Espacio</a></li>
+                 <li><a href="{{ APP_URL }}registroinstituto"><i class="glyphicon glyphicon-calendar"></i> Registrar Instituto</a></li>
+                 <li><a href="{{ APP_URL }}registrorecurso"><i class="glyphicon glyphicon-file"></i> Registrar Recurso</a></li>
+                 <li><a href="{{ APP_URL }}registroespaciorecurso"><i class="glyphicon glyphicon-file"></i> Registrar Recurso en Espacio</a></li>
+                 <li><a href="{{ APP_URL }}registrohorariolaboral"><i class="glyphicon glyphicon-file"></i> Registrar Horario Laboral</a></li>
+
+
+                </ul>
+             </li>
+               <hr>
+             <li class="nav-header">
+               <a href="#" data-toggle="collapse" data-target="#menu3">
+                 <h5> Panel de Edición <i class="glyphicon glyphicon-edit"></i></h5>
+               </a>
+              <ul class="list-unstyled collapse in" id="userMenu">
+                <li><a href="{{ APP_URL }}editarprofesor"><i class="glyphicon glyphicon-pencil"></i> Editar Profesores</a></li>
+                <li><a href="{{ APP_URL }}editarasignatura"><i class="glyphicon glyphicon-pencil"></i> Editar Asignaturas </a></li>
+                <li><a href="{{ APP_URL }}editaraula"><i class="glyphicon glyphicon-pencil"></i> Editar Aula</a></li>
+                <li><a href="{{ APP_URL }}editargrupo"><i class="glyphicon glyphicon-pencil"></i>Editar Grupo</a></li>
+              </ul>
+             </li>
+           </ul>
+              <hr>
+      </div>
+
+    <br/>
+
+{% block content %}
+
+
+{% endblock content %}
+
+
+
+
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="/sh/sh/assets/js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/scripts.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery-2.1.1.js"></script>
+    <script src="{{ STATIC_URL }}js/prettify.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.bsAlerts.js"></script>
+
+    <script>
+      $(function(){
+        var $window = $(window);
+        // side bar
+        setTimeout(function () {
+          $('.bs-docs-sidenav').affix({
+            offset: {
+              top: function () { return $window.width() <= 980 ? 250 : 170 }
+            , bottom: 100
+            }
+          })
+        }, 100)
+
+        // make code pretty
+        window.prettyPrint && prettyPrint();
+
+        $("#warn-me").click(function() {
+          $(document).trigger("add-alerts", [
+            {
+              message: "Datos Guardados con Exito",
+              priority: "success"
+            }
+          ]);
+        });
+      });
+    </script>
+
+   </div>
+  </body>
+</html>

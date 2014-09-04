@@ -1,0 +1,130 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+
+            <!-- center left-->
+
+          <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-12">
+                         <div data-alerts="alerts" data-titles="{&quot;success&quot;: &quot;&lt;em&gt;Registro Agregado!&lt;/em&gt;&quot;}" data-ids="myid" data-fade="10000"> </div>
+                 </div>
+               <hr>
+
+              <div class="panel panel-default">
+
+                    <div class="panel-heading"><h4>Registrar Profesor</h4></div>
+
+                    <div class="panel-body">
+
+                       <div class="row">
+                            <div class="col-md-10">
+                              <form action="/registroprofesor" method="post">{% csrf_token %}
+                                <div class="control-group">
+
+                          <h4>Nombre del profesor</h4>
+                          <div class="controls">
+                           <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre del grupo">
+                          </div>
+
+                          <h4>Codigo</h4>
+                          <div class="controls">
+                           <input type="text" name="codigo" class="form-control" placeholder="Ingrese Codigo del profesor">
+                          </div>
+                   
+                          <h4>Cargo Administrativo</h4>
+                          <div class="controls">
+                           <input type="text" name="cargo" class="form-control" placeholder="Ingrese Cargo Administrativo">
+                          </div>
+                          <h4>Correo</h4>
+                          <div class="controls">
+                           <input type="text" name="correo" class="form-control" placeholder="Ingrese el Correo Electronico">
+                          </div>
+                        </div>
+
+                                               
+                        <div class="control-group">
+                           <select  data-required="true" name="institutos">
+                                <option></option>
+                            {% for instituto in institutos %}
+                                <option>{{ instituto.instituto }}</option>
+                            {% endfor %}
+                            </select>
+
+                          <h4>Instituto</h4>
+                          <div class="controls">
+                             <select name="instituto" class="form-control">
+                             <option>Computación</option>
+                             <option>Diseño</option>
+                             <option>Ciencias Sociales y Humanidades</option>
+                             <option>Fisica y Matemáticas</option>
+                             <option>Hidrología</option>
+                             <option>Minería</option>
+                             <option>Electrónica y Mecatrónica</option>
+                             <option>Agroindustrias</option>
+                             <option>Centro de Idiomas</option>
+                                </select>
+                          </div>
+                          <h4>Carrera</h4>
+                          <div class="controls">
+                             <select name="carrera" class="form-control">
+                             <option>Ingenieria en Alimentos</option>
+                              <option>Ingenieria en Computación</option>
+                              <option>Ingenieria en Diseño</option>
+                              <option>Ingenieria en Electrónica</option>
+                             <option>Ingenieria en Mecatrónica</option>
+                             <option>Ingenieria Industrial</option>
+                             <option>Ingenieria en Física Aplicada</option>
+                             <option>Licenciatura en Ciencias Empresariales </option>
+                             <option>Licenciatura en Matemáticas Aplicadas </option>
+                             <option>Licenciatura en Estudios Mexicanos </option>
+                                </select>
+                          </div>
+                          <h4>Grado</h4>
+                          <div class="controls">
+                             <select name="grado" class="form-control">
+                              <option>Doctor</option>
+                              <option>Maestro</option>
+                              <option>Ingeniero</option>
+                              <option>Licenciatura</option>
+                              </select>
+                          </div>
+                        </div>
+                         <h4>Horas Preferentes</h4>
+                          <div class="controls">
+                           <input type="text" name="horaspref" class="form-control" placeholder="Ejemplo:para horario de 11 a 13 escribir 11,12,13" >
+                          </div>
+                           <h4>Actualmente Disponible</h4>
+                                     <label class="checkbox-inline">
+                                       <input name="deespecialidad" type="checkbox" id="inlineCheckbox1" value="option1"> SI
+                                     </label>
+
+                        <div class="control-group">
+                          <h4>Comentarios</h4>
+                          <div class="controls">
+                            <textarea name="comentario" class="form-control"></textarea>
+                          </div>
+                        </div>
+
+                         <div class="controls">
+                                   <br/>
+                                   <button id="warn-me" type="submit" class="btn btn-primary">
+                                      Guardar
+                                   </button>
+                                     <hr>
+                          </div>
+                              </form>
+                            </div>
+
+                       </div>
+                    </div>
+
+              </div>
+          </div>
+
+{% endblock content %}
+                            
+                
+
+
+    

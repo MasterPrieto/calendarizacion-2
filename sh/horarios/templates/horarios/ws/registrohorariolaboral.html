@@ -1,0 +1,57 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+
+            <!-- center left-->
+
+          <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-12">
+                         <div data-alerts="alerts" data-titles="{&quot;success&quot;: &quot;&lt;em&gt;Registro Agregado!&lt;/em&gt;&quot;}" data-ids="myid" data-fade="10000"> </div>
+                 </div>
+               <hr>
+
+              <div class="panel panel-default">
+
+                    <div class="panel-heading"><h4>Registrar Horario Laboral</h4></div>
+
+                    <div class="panel-body">
+
+                       <div class="row">
+                            <div class="col-md-10">
+                              <form action="/registrohorariolaboral" method="post">{% csrf_token %}
+                          <div class="control-group">
+                          <h4>Nombre del Horario</h4>
+                          <div class="controls">
+                           <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre Completo">
+                          </div>
+                          <div class="control-group">
+
+                          <h4>Horas Laborales</h4>
+                          <div class="controls">
+                           <input type="text" name="horas" class="form-control" placeholder="Ejemplo:para horario de 11 a 13 escribir 11,12,13" >
+                          </div>
+
+
+                        </div>  
+
+
+
+
+                                  <div class="controls">
+                                   <br/>
+                                   <button id="warn-me" type="submit" class="btn btn-primary">
+                                      Guardar
+                                   </button>
+                                     <hr>
+                                </div>
+                              </form>
+                            </div>
+
+                       </div>
+                    </div>
+
+              </div>
+          </div>
+
+{% endblock content %}

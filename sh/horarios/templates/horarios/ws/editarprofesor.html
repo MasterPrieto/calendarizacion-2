@@ -1,0 +1,74 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+            <!-- center left-->
+          <div class="col-md-8">
+            <hr>
+
+             <div class="panel panel-default">
+                 <div class="panel-heading"><h4> Editar Profesor</h4></div>
+
+                  <form action="/editarprofesor/" method="post">{% csrf_token %}
+
+
+
+                        <div class="control-group">
+                          <h4>Instituto</h4>
+                          <div class="controls">
+                             <select id="select_instituto"name="instituto" class="form-control">
+                              <option>Computación</option>
+                              <option>Diseño</option>
+                              <option>Ciencias Sociales y Humanidades</option>
+                              <option>Fisica y Matemáticas</option>
+                              <option>Hidrología</option>
+                              <option>Minería</option>
+                              <option>Electrónica y Mecatrónica</option>
+                              <option>Agroindustrias</option>
+                              <option>Centro de Idiomas</option>
+                                </select>
+                          </div>
+
+                        </div>
+                        <div class="controls">
+                              <br/>
+
+                              <button  id="buscar" type="submit" class="btn btn-primary btn-lg center-block">
+                               Buscar
+                            </button>
+                            </br>
+
+                            <table class="table table-hover">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Codigo</th>
+                                        <th>Carrera</th>
+                                        <th>Opciones</th>
+                                    </tr>
+
+                                 {% for element in consulta_profesor %}
+                                    <tr>
+                                    <td>{{element.nombre}}</td>
+                                    <td>{{element.codigo}}</td>
+                                    <td>{{element.carrera}}</td>
+                                    <td><a href="/edicionprofesor/{{element.id}}" name="editar" type="button" class="btn btn-info">Editar</a>
+                                    <button name="eliminar" type="button" class="btn btn-danger">Eliminar</button></td>
+                                    </tr>
+                                 {% endfor %}
+
+                    </table>
+                            </div>
+                            <br/>
+                        </form>
+                        </div>
+
+                        </div>
+
+                      </div>
+
+
+
+                  </div><!--/panel-body-->
+
+{% endblock content %}

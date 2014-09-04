@@ -1,0 +1,74 @@
+{% extends "horarios/ws/layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+            <!-- center left-->
+          <div class="col-md-8">
+            <hr>
+
+             <div class="panel panel-default">
+                 <div class="panel-heading"><h4> Editar Asignatura</h4></div>
+
+                  <form action="/editarasignatura/" method="post">{% csrf_token %}
+
+
+
+                        <div class="control-group">
+                          <h4>Carrera</h4>
+                          <div class="controls">
+                             <select id="select_carrera"name="carrera" class="form-control">
+                             <option>Ingenieria en Alimentos</option>
+                             <option>Ingenieria en Computación</option>
+                             <option>Ingenieria en Diseño</option>
+                             <option>Ingenieria en Electrónica</option>
+                             <option>Ingenieria en Mecatrónica</option>
+                             <option>Ingenieria Industrial</option>
+                             <option>Ingenieria en Física Aplicada</option>
+                             <option>Licenciatura en Ciencias Empresariales </option>
+                             <option>Licenciatura en Matemáticas Aplicadas </option>
+                             <option>Licenciatura en Estudios Mexicanos </option>
+                             </select>
+                          </div>
+
+                        </div>
+                        <div class="controls">
+                              <br/>
+
+                              <button  id="buscar" type="submit" class="btn btn-primary btn-lg center-block">
+                               Buscar
+                            </button>
+                            </br>
+                                 <table class="table table-hover">
+                                    <tr>
+                                       <th>Nombre</th>
+                                       <th>Codigo</th>
+                                       <th>Semestre</th>
+                                       <th>Opciones</th>
+                                    </tr>
+
+                                 {% for element in consulta_asignatura %}
+                                    <tr>
+                                    <td>{{element.nombre}}</td>
+                                    <td>{{element.codigo}}</td>
+                                    <td>{{element.semestre}}</td>
+                                    <td><a href="/edicionasignatura/{{element.id}}" name="editar" type="button" class="btn btn-info">Editar</a>
+                                    <button name="eliminar" type="button" class="btn btn-danger">Eliminar</button></td>
+                                    </tr>
+                                 {% endfor %}
+
+                    </table>
+                            </div>
+                            <br/>
+                        </form>
+                        </div>
+
+                        </div>
+
+                      </div>
+
+
+
+                  </div><!--/panel-body-->
+
+{% endblock content %}
